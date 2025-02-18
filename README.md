@@ -1,24 +1,42 @@
-# Air Quality Monitoring System 🌍
+# 🌿 Air Quality Monitoring System with LCD 🌿
 
-This project uses an **MQ-135 gas sensor** to monitor air quality. It displays the data on an **OLED screen**.
+This project monitors air pollution levels using an **MQ2 gas sensor, LCD, LED, and Buzzer**. If pollution crosses a certain threshold, an LED and buzzer alert the user while the LCD displays the gas level.
 
-## Components Used:
-- ESP32 / Arduino
-- MQ-135 Gas Sensor
-- OLED Display (SSD1306)
-- Jumper Wires
+## 🔹 Components Used:
+- **Arduino Uno**
+- **MQ2 Gas Sensor**
+- **16x2 LCD Display (I2C)**
+- **LED (Indicates high pollution)**
+- **Buzzer (Alarm for bad air quality)**
+- **Resistors and Jumper Wires**
 
-## Circuit Diagram:
-![Wiring Diagram](assets/wiring_diagram.jpg) 
+## 🔌 Wiring:
+### **MQ2 Gas Sensor**
+| Pin | Arduino |
+|-----|---------|
+| **A1** | **A0** |
+| **H1** | **5V** |
+| **H2** | **GND** |
+| **B1** | **Pin 7 (Optional)** |
 
-## How It Works:
-- The sensor detects air quality levels.
-- The OLED displays whether air quality is **Good, Moderate, or Poor**.
+### **LCD (16x2 I2C)**
+| LCD Pin | Arduino |
+|---------|---------|
+| **VCC** | **5V** |
+| **GND** | **GND** |
+| **SDA** | **A4** |
+| **SCL** | **A5** |
 
-## Setup Instructions:
-1. Install **Adafruit SSD1306** and **GFX Library** in Arduino IDE. no need to install if doing in tinkercad
-2. Upload the code in `air_quality_monitor.ino`.
-3. View real-time air quality readings!
+## 📝 Code:
+- Reads **gas concentration** from MQ2 sensor.
+- Displays gas level **on LCD & Serial Monitor**.
+- Alerts user with **LED & Buzzer** if pollution is too high.
 
-## Author:
-👤 **Gursimar Singh**  
+## 🚀 Setup Instructions:
+1. Connect the components as per the wiring diagram.
+2. Upload the **Arduino code**.
+3. Open Serial Monitor to view **gas concentration**.
+4. If values exceed the threshold, the **LED & buzzer will activate**, and the **LCD will show a warning**.
+
+## 📜 License:
+This project is **open-source** and **free to use**.
